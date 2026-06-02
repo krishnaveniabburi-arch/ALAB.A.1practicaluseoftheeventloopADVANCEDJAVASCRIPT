@@ -57,6 +57,8 @@ const container = document.getElementById('prime');
     }
 
     // run the function
+      
+    generatePrime(50);
 
 
   
