@@ -32,40 +32,31 @@ const container = document.getElementById('prime');
 // Write a function that takes a parameter n and adds a list of all prime numbers between one and n to your HTML element
 // function to check prime numbers
 
- function isprime(num) {
-    if (num <= 1)
+ function isprime(n) {
+    if (n <= 1)
         return false;
-    for (let i = 2; i <= Math.sqrt(num); i++) {
-        if (num % i === 0)
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i === 0)
             return false;
     }
     return true;
  }
 
  // main function
-  function generatePrime(num) {
-    let current = 2;
+  function generatePrime(n) {
+    for (let i = 1; i<= n; i++) {
 
-    function processNext() {
-        if (current <= num) {
+    
          // check if the number is prime
-         if (isPrime(current)) {   
-            container.textcontent += current + '';
+         if (isprime(i)) {   
+            container.textcontent += i + '';
          }
-        current++;
-    // going back to loop 
-    setTimeout(processNext, 0);    
-    } else {
-
-    // calling alert method
+    }
+ // calling alert method
       alert('calculation is finished');
     }
- }
 
- // start the loop
-   processNext();
-}
+    // run the function
 
-   generatePrime(10000);
 
   
